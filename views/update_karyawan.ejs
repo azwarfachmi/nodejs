@@ -1,0 +1,32 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+
+            <form method="post" action="/karyawan/edit/<%=data[0].nik%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Nama</td><td>: <input type="text" name="nama" value="<%=data[0].nama%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label" valign="top">Alamat</td>
+                    <td valign="top">:
+                        <textarea name="alamat" required cols="30" rows="5"><%=data[0].alamat%></textarea>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="label">Jenis Kelamin</td><td>: <input type="radio" name="Jkel" onclick="displayResult(this.value)" value="LAKI-LAKI">LAKI-LAKI
+                  <br> </br> &nbsp; <input type="radio" name="Jkel" onclick="displayResult(this.value)" value="PEREMPUAN">PEREMPUAN</td></tr>
+                  <tr>
+                    <td class="label">Tanggal Lahir</td><td>: <input type="text" name="tgl_lahir" placeholder="mm/dd/yyyy" value="<%=data[0].tgl_lahir%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+
+        </div>
